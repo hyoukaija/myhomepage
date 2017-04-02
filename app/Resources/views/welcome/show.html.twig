@@ -4,7 +4,7 @@
 
 {% block body %}
 <header id="header">
-	<a href="#" class="image avatar"><img src="{{ asset('Images/Denial.jpg') }}" alt="" /></a>
+	<a href="#" class="image avatar"><img src="{{ asset('Images/Denial.jpg')}}" alt="" /></a>
 	<h1><strong>I am Denial!</strong> a super simple<br />
 	responsive site template freebie<br />
 	crafted by <a href="http://html5up.net">HTML5 UP</a>.</h1>
@@ -60,7 +60,8 @@
 				</article>
 			</div>
 			<ul class="actions">
-				<li><a href="#" class="button">Full Portfolio</a></li>
+				<li><a href="{{ path('blog_show') }}" class="button">Full Portfolio</a></li>
+				<li><a href="{{ path('Editor_my') }}" class="button">Editor</a></li>
 			</ul>
 		</section>
 
@@ -428,7 +429,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 <footer id="footer">
 	<ul class="icons">
 		<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-		<li><a href="https://github.com/hyoukaija" class="icon fa-github"><span class="label">Github</span></a></li>
+		<li><a href="https://github.com/hyoukaija?tab=repositories" class="icon fa-github"><span class="label">Github</span></a></li>
 		<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
 		<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
 	</ul>

@@ -1,4 +1,11 @@
+blog_all:
+    resource: "@BlogAllBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
 
+Editor_my:
+    path: /editor
+    defaults: { _controller: AppBundle:Editor:create }
