@@ -9,3 +9,10 @@ app:
 Editor_my:
     path: /editor
     defaults: { _controller: AppBundle:Editor:create }
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+call_me:
+    path: /call_me
+    defaults: { _controller: AppBundle:Welcome:callme }

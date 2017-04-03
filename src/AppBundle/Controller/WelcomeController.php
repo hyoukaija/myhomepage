@@ -13,7 +13,7 @@ class WelcomeController extends Controller
 	
 
 	/**
-	 *@Route("/")
+	 *@Route("/",name="home_page")
 	 */
 
 
@@ -23,6 +23,11 @@ class WelcomeController extends Controller
 		return $this->render('welcome/show.html.twig',[
 				
  			]);
+	}
+
+	public function callmeAction()
+	{
+		return $this->render('welcome/callme.html.twig');
 	}
 
 	
