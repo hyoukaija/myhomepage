@@ -5,3 +5,7 @@ blog_all_homepage:
 blog_show:
     path:     /blog_show
     defaults: { _controller: BlogAllBundle:Default:show }
+
+add_article:
+    path:     /add_article
+    defaults: { _controller: BlogAllBundle:Add:article }

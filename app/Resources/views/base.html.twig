@@ -6,6 +6,7 @@
         <meta name="keywords" content="" />
         <meta name="author" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('Images/webhome.ico')}}">
         <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
         <title>{% block title %}Welcome My page!{% endblock %}</title>
         {% block stylesheets %}
@@ -32,15 +33,15 @@
         
     </head>
     <body id="top">
-        {% block header %}
+        {# {% block header %}
             {% include 'header.html.twig' %}
-        {% endblock %}
+        {% endblock %} #}
         {% block body %}  
         {% endblock %}
         {% block javascripts %}
             <script src="{{ asset('JS/jquery.min.js') }}"></script>
-            <script src="{{ asset('JS/jquery.poptrox.min.js') }}"></script>
             <script src="{{ asset('JS/skel.min.js') }}"></script>
+            <script src="{{ asset('JS/jquery.poptrox.min.js') }}"></script>
             <script src="{{ asset('JS/init.js') }}"></script>
             <script src="http://code.jquery.com/jquery-latest.js"></script>
             <script src="{{ asset('JS/bootstrap.min.js') }}"></script>

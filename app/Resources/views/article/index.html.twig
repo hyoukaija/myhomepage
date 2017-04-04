@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Articles list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Body</th>
+                <th>Createtime</th>
+                <th>Updatetime</th>
+                <th>Keyword</th>
+                <th>Hits</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <td><a href="{{ path('article_show', { 'id': article.id }) }}">{{ article.id }}</a></td>
+                <td>{{ article.title }}</td>
+                <td>{{ article.body }}</td>
+                <td>{% if article.createTime %}{{ article.createTime|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if article.updateTime %}{{ article.updateTime|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ article.keyword }}</td>
+                <td>{{ article.hits }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('article_show', { 'id': article.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('article_edit', { 'id': article.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('article_new') }}">创建新文章</a>
+        </li>
+        <li>
+            <a href="{{ path('home_page') }}">返回首页</a>
+        </li>
+    </ul>
+
+{% endblock %}
