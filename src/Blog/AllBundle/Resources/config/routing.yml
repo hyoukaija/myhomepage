@@ -9,3 +9,28 @@ blog_show:
 add_article:
     path:     /add_article
     defaults: { _controller: BlogAllBundle:Add:article }
+
+article_new:
+    path:     /article/new
+    defaults: { _controller: BlogAllBundle:Article:new }
+
+article_index:
+    path:     /article/article_index
+    defaults: { _controller: BlogAllBundle:Article:index }
+    methods: [GET]
+
+article_show:
+    path:     /article/{id}
+    defaults: { _controller: BlogAllBundle:Article:show }
+    methods: [GET]
+
+
+article_edit:
+    path:     /article/{id}/edit
+    defaults: { _controller: BlogAllBundle:Article:edit }
+    methods: [POST,GET]
+
+article_delete:
+    path:     /article/{id}
+    defaults: { _controller: BlogAllBundle:Article:delete }
+    methods: [DELETE]

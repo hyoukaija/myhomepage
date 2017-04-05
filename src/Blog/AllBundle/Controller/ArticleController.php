@@ -8,19 +8,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
-/**
- * Article controller.
- *
- * @Route("article")
- */
+
 class ArticleController extends Controller
 {
-    /**
-     * Lists all article entities.
-     *
-     * @Route("/", name="article_index")
-     * @Method("GET")
-     */
+    
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -32,12 +23,7 @@ class ArticleController extends Controller
         ));
     }
 
-    /**
-     * Creates a new article entity.
-     *
-     * @Route("/new", name="article_new")
-     * @Method({"GET", "POST"})
-     */
+    
     public function newAction(Request $request)
     {
         $article = new Article();
@@ -54,7 +40,7 @@ class ArticleController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $article->setCreateTime(new \DateTime('now'));
             $article->setUpdateTime(new \DateTime('now'));
-            $article->setHits(1);
+            $article->setHits(0);
             $em = $this->getDoctrine()->getManager();
             $em->persist($article);
             $em->flush();
@@ -68,12 +54,7 @@ class ArticleController extends Controller
         ));
     }
 
-    /**
-     * Finds and displays a article entity.
-     *
-     * @Route("/{id}", name="article_show")
-     * @Method("GET")
-     */
+    
     public function showAction(Article $article)
     {
         $deleteForm = $this->createDeleteForm($article);
@@ -100,7 +81,7 @@ class ArticleController extends Controller
             $article->setUpdateTime(new \DateTime('now'));
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('article_edit', array('id' => $article->getId()));
+            return $this->redirectToRoute('article_show', array('id' => $article->getId()));
         }
 
         return $this->render('article/edit.html.twig', array(
