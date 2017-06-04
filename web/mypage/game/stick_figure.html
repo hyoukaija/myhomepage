@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Stick Figure</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		var scene = 0;
+		function changePicture(constb) {
+			var message = "";
+
+			switch(scene){
+				case 0:
+					scene = 1;
+					message = "Your journey begins at a fork in the road.";
+					break;
+				case 1:
+					if (constb == 1) {
+						scene = 2;
+						message = "You have arrived at a cute little house in the woods.";
+					}else {
+						scene = 3;
+						message = "You are standing on the bridge overlooking a peaceful stream.";
+					}
+					break;
+				case 2:
+					if (constb == 1) {
+						scene = 4;
+						message = "Peeking through the window, you see a witch inside the house.";
+					}else {
+						scene = 5;
+						message = "Sorry, a witch lives in the house and you just became part of her stew.";
+					}
+					break;
+				case 3:
+					if (constb == 1) {
+						scene = 6;
+						message = "Sorry, a troll lives on the other side of the bridge and you just became his lunch.";
+					}else {
+						scene = 7;
+						message = "Your stare is interrupted by the arrival of a huge troll.";
+					}
+					break;
+				case 4:
+					if (constb == 1) {
+						scene = 8;
+						message = "To be continued.";
+					}else {
+						scene = 5;
+						message = "Sorry, you became part of the witch's stew.";
+					}
+					break;
+				case 5:
+					break;
+				case 6:
+					break;
+				case 7:
+					if (constb ==1) {
+						scene = 6;
+						message = "Sorry, a troll lives on the other side of the bridge and you just became his lunch.";
+					}else {
+						scene = 8;
+						message = "To be continued.";
+					}
+					break;
+				case 8:
+					break;
+			}
+			document.getElementById('img').src = "scene"+scene+".png";
+			document.getElementById('messageHelp').innerHTML = message; 
+		}
+	</script>
+</head>
+<body style="text-align: center;">
+<div>
+	<img src="scene0.png" id="img" alt="scene0">
+</div>
+<div id="messageHelp"></div>
+<div>
+	Please choose:
+	<input type="button" name="b1" value="1" onclick="changePicture(1)">
+	<input type="button" name="b2" value="2" onclick="changePicture(2)">	
+</div>
+<div>
+	<a href="../index.html">回主页</a>
+</div>
+</body>
+</html>

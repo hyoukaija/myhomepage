@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
-
+ 
 class ArticleController extends Controller
 {
     
@@ -65,12 +65,7 @@ class ArticleController extends Controller
         ));
     }
 
-    /**
-     * Displays a form to edit an existing article entity.
-     *
-     * @Route("/{id}/edit", name="article_edit")
-     * @Method({"GET", "POST"})
-     */
+    
     public function editAction(Request $request, Article $article)
     {
         $deleteForm = $this->createDeleteForm($article);
@@ -91,12 +86,7 @@ class ArticleController extends Controller
         ));
     }
 
-    /**
-     * Deletes a article entity.
-     *
-     * @Route("/{id}", name="article_delete")
-     * @Method("DELETE")
-     */
+    
     public function deleteAction(Request $request, Article $article)
     {
         $form = $this->createDeleteForm($article);
